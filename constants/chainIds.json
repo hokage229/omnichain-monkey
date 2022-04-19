@@ -5,5 +5,13 @@
   "mumbai":           10009,
   "arbitrum-rinkeby": 10010,
   "optimism-kovan":   10011,
-  "fantom-testnet":   10012
+  "fantom-testnet":   10012,
+
+  "ethereum":         1,
+  "bsc":              2,
+  "avalanche":        6,
+  "polygon":          9,
+  "arbitrum":         10,
+  "optimism":         11,
+  "fantom":           12
 }
