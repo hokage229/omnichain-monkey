@@ -44,11 +44,27 @@ pragma solidity 0.8.4;
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 import "../token/onft/extension/UniversalONFT.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 /// @title A LayerZero UniversalONFT example
 /// @notice You can use this to mint ONFT and send nftIds across chain.
 ///  Each contract deployed to a chain should carefully set a `_startMintIndex` and a `_maxMint`
 ///  value to set a range of allowed mintable nftIds (so that no two chains can mint the same id!)
 contract ExampleUniversalONFT is UniversalONFT {
-    constructor(address _layerZeroEndpoint, uint _startMintId, uint _endMintId) UniversalONFT("OmniMonke", "OM", _layerZeroEndpoint, _startMintId, _endMintId) {}
+    using Strings for uint;
+
+    string public baseExtension = ".json";
+
+    constructor(
+        address _layerZeroEndpoint,
+        uint _startMintId,
+        uint _endMintId
+    ) UniversalONFT("OmniMonke", "OM", _layerZeroEndpoint, _startMintId, _endMintId) {}
+
+    function tokenURI(uint tokenId) public view virtual override returns (string memory) {
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+
+        string memory baseURI = _baseURI();
+        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString(), baseExtension)) : "";
+    }
 }

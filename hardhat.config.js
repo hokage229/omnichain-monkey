@@ -6,6 +6,7 @@ require("solidity-coverage");
 require('hardhat-gas-reporter');
 require('hardhat-deploy');
 require('hardhat-deploy-ethers');
+require("@nomiclabs/hardhat-etherscan")
 require('./tasks');
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -103,43 +104,56 @@ module.exports = {
             url: `https://rpc.testnet.fantom.network/`,
             chainId: 4002,
             accounts: accounts(),
+        },
+
+
+        ethereum: {
+            url: getUrl("ethereum"),
+            chainId: 1,
+            accounts: accounts(),
+        },
+        bsc: {
+            url: getUrl("bsc"),
+            chainId: 56,
+            accounts: accounts(),
+        },
+        avalanche: {
+            url: getUrl("avalanche"),
+            chainId: 43114,
+            accounts: accounts(),
+        },
+        polygon: {
+            url: getUrl("polygon"),
+            chainId: 137,
+            accounts: accounts(),
+        },
+        arbitrum: {
+            url: getUrl("arbitrum"),
+            chainId: 42161,
+            accounts: accounts(),
+        },
+        optimism: {
+            url: getUrl("optimism"),
+            chainId: 10,
+            accounts: accounts(),
+        },
+        fantom: {
+            url: getUrl("fantom"),
+            chainId: 250,
+            accounts: accounts(),
         }
     },
 
-
-    ethereum: {
-        url: getUrl("ethereum"),
-        chainId: 1,
-        accounts: accounts(),
-    },
-    bsc: {
-        url: getUrl("bsc"),
-        chainId: 56,
-        accounts: accounts(),
-    },
-    avalanche: {
-        url: getUrl("avalanche"),
-        chainId: 43114,
-        accounts: accounts(),
-    },
-    polygon: {
-        url: getUrl("polygon"),
-        chainId: 137,
-        accounts: accounts(),
-    },
-    arbitrum: {
-        url: getUrl("arbitrum"),
-        chainId: 42161,
-        accounts: accounts(),
-    },
-    optimism: {
-        url: getUrl("optimism"),
-        chainId: 10,
-        accounts: accounts(),
-    },
-    fantom: {
-        url: getUrl("fantom"),
-        chainId: 250,
-        accounts: accounts(),
+    etherscan: {
+        //need to hide
+        apiKey: {
+            rinkeby: "WSAAUQJZWW2IM1I7SD9IEJSYUZXEYVP8MG",
+            bscTestnet: "AX6GED3CWP3N8MS6FQAUPR5RPYDMGMTC9S",
+            avalancheFujiTestnet: "S2EI1WDSF6HFZIDYWRJF2I5M38UXRRE4G9",
+            polygonMumbai: "ENXRVRNK82ZZ4V4IUE55JVNH1MDGVD6DN8",
+            arbitrumTestnet: "",
+            optimisticKovan: "Y5MA46HY5PRU1V88PWG23XZSUSFI7TNEVT",
+            ftmTestnet: "ZBI5AMGKSH8ATJ56RI5V4MEJDYYYGV8B92"
+        }
     }
 };

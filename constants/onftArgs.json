@@ -1,31 +1,31 @@
 {
   "rinkeby": {
     "startMintId": 1,
-    "endMintId": 1200
+    "endMintId": 120
   },
   "bsc-testnet": {
-    "startMintId": 1201,
-    "endMintId": 1750
+    "startMintId": 121,
+    "endMintId": 175
   },
   "fuji": {
-    "startMintId": 1751,
-    "endMintId": 2300
+    "startMintId": 176,
+    "endMintId": 230
   },
   "mumbai": {
-    "startMintId": 2301,
-    "endMintId": 2550
+    "startMintId": 231,
+    "endMintId": 255
   },
   "arbitrum-rinkeby": {
-    "startMintId": 2551,
-    "endMintId": 2800
+    "startMintId": 256,
+    "endMintId": 280
   },
   "optimism-kovan": {
-    "startMintId": 2801,
-    "endMintId": 2900
+    "startMintId": 281,
+    "endMintId": 290
   },
   "fantom-testnet": {
-    "startMintId": 2901,
-    "endMintId": 3000
+    "startMintId": 291,
+    "endMintId": 300
   },
 
   "ethereum": {
