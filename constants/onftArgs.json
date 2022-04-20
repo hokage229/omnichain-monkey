@@ -1,14 +1,59 @@
 {
-  "bsc-testnet": {
+  "rinkeby": {
     "startMintId": 1,
-    "endMintId": 10
+    "endMintId": 1200
+  },
+  "bsc-testnet": {
+    "startMintId": 1201,
+    "endMintId": 1750
   },
   "fuji": {
-    "startMintId": 11,
-    "endMintId": 20
+    "startMintId": 1751,
+    "endMintId": 2300
   },
-  "rinkeby": {
-    "startMintId": 21,
-    "endMintId": 30
+  "mumbai": {
+    "startMintId": 2301,
+    "endMintId": 2550
+  },
+  "arbitrum-rinkeby": {
+    "startMintId": 2551,
+    "endMintId": 2800
+  },
+  "optimism-kovan": {
+    "startMintId": 2801,
+    "endMintId": 2900
+  },
+  "fantom-testnet": {
+    "startMintId": 2901,
+    "endMintId": 3000
+  },
+
+  "ethereum": {
+    "startMintId": 1,
+    "endMintId": 1200
+  },
+  "bsc": {
+    "startMintId": 1201,
+    "endMintId": 1750
+  },
+  "avalanche": {
+    "startMintId": 1751,
+    "endMintId": 2300
+  },
+  "polygon": {
+    "startMintId": 2301,
+    "endMintId": 2550
+  },
+  "arbitrum": {
+    "startMintId": 2551,
+    "endMintId": 2800
+  },
+  "optimism": {
+    "startMintId": 2801,
+    "endMintId": 2900
+  },
+  "fantom": {
+    "startMintId": 2901,
+    "endMintId": 3000
   }
 }
