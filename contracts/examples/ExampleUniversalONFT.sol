@@ -50,7 +50,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 /// @notice You can use this to mint ONFT and send nftIds across chain.
 ///  Each contract deployed to a chain should carefully set a `_startMintIndex` and a `_maxMint`
 ///  value to set a range of allowed mintable nftIds (so that no two chains can mint the same id!)
-contract ExampleUniversalONFT is UniversalONFT {
+contract OmniMonke is UniversalONFT {
     using Strings for uint;
 
     string public baseExtension = ".json";
@@ -58,8 +58,9 @@ contract ExampleUniversalONFT is UniversalONFT {
     constructor(
         address _layerZeroEndpoint,
         uint _startMintId,
-        uint _endMintId
-    ) UniversalONFT("OmniMonke", "OM", _layerZeroEndpoint, _startMintId, _endMintId) {}
+        uint _endMintId,
+        uint _startTimestamp
+    ) UniversalONFT("OmniMonke", "OM", _layerZeroEndpoint, _startMintId, _endMintId, _startTimestamp) {}
 
     function tokenURI(uint tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");

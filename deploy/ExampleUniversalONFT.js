@@ -8,12 +8,15 @@ module.exports = async function ({ deployments, getNamedAccounts }) {
 
     const lzEndpointAddress = LZ_ENDPOINTS[hre.network.name]
     const onftArgs = ONFT_ARGS[hre.network.name]
-    console.log({ onftArgs })
+    const startTimestamp = 1650549600
+
     console.log(`[${hre.network.name}] LayerZero Endpoint address: ${lzEndpointAddress}`)
+    console.log({ onftArgs })
+    console.log(`start timestamp: ${startTimestamp}`)
 
     await deploy("ExampleUniversalONFT", {
         from: deployer,
-        args: [lzEndpointAddress, onftArgs.startMintId, onftArgs.endMintId],
+        args: [lzEndpointAddress, onftArgs.startMintId, onftArgs.endMintId, startTimestamp],
         log: true,
         waitConfirmations: 1,
     })

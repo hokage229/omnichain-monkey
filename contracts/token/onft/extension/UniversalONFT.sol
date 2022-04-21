@@ -8,6 +8,8 @@ import ".././ONFT.sol";
 contract UniversalONFT is ONFT {
     uint public nextMintId;
     uint public maxMintId;
+    uint public immutable startTimestamp;
+    uint public immutable maxPerTx = 2;
 
     /// @notice Constructor for the UniversalONFT
     /// @param _name the name of the token
@@ -15,14 +17,24 @@ contract UniversalONFT is ONFT {
     /// @param _layerZeroEndpoint handles message transmission across chains
     /// @param _startMintId the starting mint number on this chain
     /// @param _endMintId the max number of mints on this chain
-    constructor(string memory _name, string memory _symbol, address _layerZeroEndpoint, uint _startMintId, uint _endMintId) ONFT(_name, _symbol, _layerZeroEndpoint) {
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        address _layerZeroEndpoint,
+        uint _startMintId,
+        uint _endMintId,
+        uint _startTimestamp
+    ) ONFT(_name, _symbol, _layerZeroEndpoint) {
         nextMintId = _startMintId;
         maxMintId = _endMintId;
+        startTimestamp = _startTimestamp;
     }
 
     /// @notice Mint your ONFT
     function mint() external payable {
         require(nextMintId <= maxMintId, "ONFT: Max Mint limit reached");
+        require(block.timestamp >= startTimestamp, "ONFT: Mint not started");
+        require(balanceOf(msg.sender) < maxPerTx, "ONFT: Only 2 per wallet");
 
         uint newId = nextMintId;
         nextMintId++;
