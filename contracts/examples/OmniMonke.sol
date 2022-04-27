@@ -51,21 +51,10 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 ///  Each contract deployed to a chain should carefully set a `_startMintIndex` and a `_maxMint`
 ///  value to set a range of allowed mintable nftIds (so that no two chains can mint the same id!)
 contract OmniMonke is UniversalONFT {
-    using Strings for uint;
-
-    string public baseExtension = ".json";
-
     constructor(
         address _layerZeroEndpoint,
         uint _startMintId,
         uint _endMintId,
         uint _startTimestamp
     ) UniversalONFT("OmniMonke", "OM", _layerZeroEndpoint, _startMintId, _endMintId, _startTimestamp) {}
-
-    function tokenURI(uint tokenId) public view virtual override returns (string memory) {
-        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-
-        string memory baseURI = _baseURI();
-        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString(), baseExtension)) : "";
-    }
 }

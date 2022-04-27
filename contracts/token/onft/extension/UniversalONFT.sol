@@ -9,7 +9,7 @@ contract UniversalONFT is ONFT {
     uint public nextMintId;
     uint public maxMintId;
     uint public immutable startTimestamp;
-    uint public immutable maxPerTx = 2;
+    uint public immutable maxPerTx = 3;
 
     /// @notice Constructor for the UniversalONFT
     /// @param _name the name of the token
@@ -34,7 +34,7 @@ contract UniversalONFT is ONFT {
     function mint() external payable {
         require(nextMintId <= maxMintId, "ONFT: Max Mint limit reached");
         require(block.timestamp >= startTimestamp, "ONFT: Mint not started");
-        require(balanceOf(msg.sender) < maxPerTx, "ONFT: Only 2 per wallet");
+        require(balanceOf(msg.sender) < maxPerTx, "ONFT: Only 3 per wallet");
 
         uint newId = nextMintId;
         nextMintId++;

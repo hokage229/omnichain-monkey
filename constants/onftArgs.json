@@ -28,32 +28,32 @@
     "endMintId": 300
   },
 
-  "ethereum": {
-    "startMintId": 1,
-    "endMintId": 1200
-  },
-  "bsc": {
-    "startMintId": 1201,
-    "endMintId": 1750
+  "arbitrum": {
+    "startMintId": 0,
+    "endMintId": 249
   },
   "avalanche": {
-    "startMintId": 1751,
-    "endMintId": 2300
+    "startMintId": 250,
+    "endMintId": 799
   },
-  "polygon": {
-    "startMintId": 2301,
-    "endMintId": 2550
+  "bsc": {
+    "startMintId": 800,
+    "endMintId": 1349
   },
-  "arbitrum": {
-    "startMintId": 2551,
-    "endMintId": 2800
-  },
-  "optimism": {
-    "startMintId": 2801,
-    "endMintId": 2900
+  "ethereum": {
+    "startMintId": 1350,
+    "endMintId": 2549
   },
   "fantom": {
-    "startMintId": 2901,
-    "endMintId": 3000
+    "startMintId": 2550,
+    "endMintId": 2649
+  },
+  "optimism": {
+    "startMintId": 2650,
+    "endMintId": 2749
+  },
+  "polygon": {
+    "startMintId": 2750,
+    "endMintId": 2999
   }
 }

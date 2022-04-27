@@ -1,14 +1,16 @@
 const CHAIN_ID = require("../constants/chainIds.json")
 
 module.exports = async function (taskArgs, hre) {
+    let adapterParams = ethers.utils.solidityPack(["uint16", "uint256"], [1, 200000]) // default adapterParams example
+    console.log(adapterParams)
+    console.log(ethers.constants.AddressZero)
     const signers = await ethers.getSigners()
     const owner = signers[0]
     const dstChainId = CHAIN_ID[taskArgs.targetNetwork]
     const tokenId = taskArgs.tokenId
     const exampleUniversalONFT = await ethers.getContract("ExampleUniversalONFT")
-    console.log(`[source] exampleUniversalONFT.address: ${exampleUniversalONFT.address}`)
 
-    let adapterParams = ethers.utils.solidityPack(["uint16", "uint256"], [1, 200000]) // default adapterParams example
+    console.log(`[source] exampleUniversalONFT.address: ${exampleUniversalONFT.address}`)
 
     try {
         let tx = await (

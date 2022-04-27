@@ -147,13 +147,13 @@ module.exports = {
     etherscan: {
         //need to hide
         apiKey: {
-            rinkeby: "WSAAUQJZWW2IM1I7SD9IEJSYUZXEYVP8MG",
-            bscTestnet: "AX6GED3CWP3N8MS6FQAUPR5RPYDMGMTC9S",
-            avalancheFujiTestnet: "S2EI1WDSF6HFZIDYWRJF2I5M38UXRRE4G9",
-            polygonMumbai: "ENXRVRNK82ZZ4V4IUE55JVNH1MDGVD6DN8",
-            arbitrumTestnet: "",
-            optimisticKovan: "Y5MA46HY5PRU1V88PWG23XZSUSFI7TNEVT",
-            ftmTestnet: "ZBI5AMGKSH8ATJ56RI5V4MEJDYYYGV8B92"
+            mainnet: "WSAAUQJZWW2IM1I7SD9IEJSYUZXEYVP8MG",
+            bsc: "AX6GED3CWP3N8MS6FQAUPR5RPYDMGMTC9S",
+            avalanche: "S2EI1WDSF6HFZIDYWRJF2I5M38UXRRE4G9",
+            polygon: "ENXRVRNK82ZZ4V4IUE55JVNH1MDGVD6DN8",
+            arbitrumOne: "",
+            optimisticEthereum: "Y5MA46HY5PRU1V88PWG23XZSUSFI7TNEVT",
+            opera: "ZBI5AMGKSH8ATJ56RI5V4MEJDYYYGV8B92"
         }
     }
 };
